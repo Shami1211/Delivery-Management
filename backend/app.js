@@ -5,12 +5,12 @@ const cors = require("cors");
 const app = express();
 
 // Routes
-const ItemRouter = require("./Routes/ItemRoute");
+const PickupRouter = require("./Routes/PickupRoute"); // Corrected path to PickupRoute
 
 // Middleware
 app.use(express.json());
 app.use(cors());
-app.use("/items", ItemRouter);
+app.use("/pickups", PickupRouter); // Updated route to use PickupRouter
 
 // DB connection
 connectDB(app); // Pass the app instance to connectDB
